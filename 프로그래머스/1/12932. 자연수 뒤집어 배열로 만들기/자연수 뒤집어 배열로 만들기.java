@@ -1,12 +1,17 @@
 class Solution {
-    public int[] solution(long n) {
-        
-        String arrStr = Long.toString(n);
-        int[] answer = new int[arrStr.length()];
- 
-        for(int i=arrStr.length() - 1; i>=0; i--){
-            answer[arrStr.length()-1-i] = arrStr.charAt(i) - '0';
-        }      
-        return answer;
+  public int[] solution(long n) {
+    String a = "" + n;
+    int[] answer = new int[a.length()];
+
+    int cnt=0;
+
+    while(n > 0) {
+        answer[cnt]=(int)(n%10);
+        n/=10;
+        System.out.println(n);
+        cnt++;
     }
+    
+    return answer;
+  }
 }
